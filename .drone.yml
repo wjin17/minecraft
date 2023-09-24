@@ -1,0 +1,19 @@
+---
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      dockerfile: ./Abe/Dockerfile
+      registry: registry-http.docker
+      repo: registry-http.docker/wjin17/mc-abe
+      insecure: true
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
