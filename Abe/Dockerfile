@@ -12,4 +12,5 @@ WORKDIR /minecraft
 COPY --from=deps /minecraft /minecraft
 RUN echo "eula=true" > eula.txt \
     && chmod +x start.sh
+EXPOSE 25565
 ENTRYPOINT [ "start.sh" ]
